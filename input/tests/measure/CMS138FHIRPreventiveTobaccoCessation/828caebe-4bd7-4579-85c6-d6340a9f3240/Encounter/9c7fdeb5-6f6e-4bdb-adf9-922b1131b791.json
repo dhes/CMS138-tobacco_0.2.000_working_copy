@@ -1,0 +1,33 @@
+{
+  "resourceType": "Encounter",
+  "id": "9c7fdeb5-6f6e-4bdb-adf9-922b1131b791",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99024",
+          "display": "Postoperative follow-up visit, normally included in the surgical package, to indicate that an evaluation and management service was performed during a postoperative period for a reason(s) related to the original procedure"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/828caebe-4bd7-4579-85c6-d6340a9f3240"
+  },
+  "period": {
+    "start": "2026-01-01T01:00:00.000Z",
+    "end": "2026-01-01T01:15:00.000Z"
+  }
+}

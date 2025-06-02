@@ -1,0 +1,28 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "b4533ac1-d176-4272-99bd-847bda90dea9",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest"
+    ]
+  },
+  "status": "active",
+  "intent": "order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "1232585",
+        "display": "24 HR bupropion hydrochloride 450 MG Extended Release Oral Tablet",
+        "userSelected": true
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/2412ad6a-fce0-4ad0-b200-737e443e5278"
+  },
+  "authoredOn": "2025-07-01T00:00:00.000Z",
+  "requester": {
+    "reference": "Practitioner/example"
+  }
+}

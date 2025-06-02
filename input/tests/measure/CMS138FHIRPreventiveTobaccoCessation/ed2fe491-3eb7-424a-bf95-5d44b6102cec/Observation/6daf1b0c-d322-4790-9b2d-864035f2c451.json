@@ -1,0 +1,45 @@
+{
+  "resourceType": "Observation",
+  "id": "6daf1b0c-d322-4790-9b2d-864035f2c451",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-observation-screening-assessment"
+    ]
+  },
+  "status": "final",
+  "category": [
+    {
+      "coding": [
+        {
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "survey"
+        }
+      ]
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "45755-6",
+        "display": "Hospice care [Minimum Data Set]"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/ed2fe491-3eb7-424a-bf95-5d44b6102cec"
+  },
+  "effectivePeriod": {
+    "start": "2025-12-31T00:00:00.000Z",
+    "end": "2026-01-01T00:00:00.000Z"
+  },
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "373066001",
+        "display": "Yes (qualifier value)"
+      }
+    ]
+  }
+}
