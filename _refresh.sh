@@ -22,13 +22,14 @@ echo "$fsoption"
 
 tooling=$input_cache_path/$tooling_jar
 if test -f "$tooling"; then
-	java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -e=json -x $fsoption
+	java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -e=json -x -lop=output/resources/library -mop=output/resources/measure $fsoption
 	# java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -x $fsoption
 else
 	tooling=../$tooling_jar
 	echo $tooling
 	if test -f "$tooling"; then
-		java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -e=json -x $fsoption
+		java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -e=json -x -lop=output/resources/library -mop=output/resources/measure
+ $fsoption
 		# java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -x $fsoption
 	else
 		echo IG Refresh NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
