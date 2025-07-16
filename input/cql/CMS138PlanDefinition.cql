@@ -51,6 +51,8 @@ context Patient
 
 define Candidate: AgeInYearsAt(date from start of "Measurement Period") >= 12
 
+define NeedsAnEncounter: Candidate and not "Initial Population"
+
 define "Denominator 1":
   "Initial Population"
 

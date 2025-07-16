@@ -24,6 +24,20 @@
             "containerId": "",
             "created": "2025-07-16T02:48:29.052Z",
             "sortNum": 30000
+        },
+        {
+            "_id": "3403fb01-83fe-4709-a4a7-70abf0bdbded",
+            "name": "update ActivityDefinition TobaccoRecommendation",
+            "containerId": "",
+            "created": "2025-07-16T03:32:53.249Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "c02d07dc-f4eb-495d-a3f2-51c5c1b0fd62",
+            "name": "update CMS138PlanDefinition Library",
+            "containerId": "",
+            "created": "2025-07-16T03:38:38.073Z",
+            "sortNum": 40000
         }
     ],
     "requests": [
@@ -275,11 +289,11 @@
             "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
             "containerId": "",
             "name": "misc",
-            "url": "Patient/minimal-test/$everything",
-            "method": "GET",
+            "url": "Encounter/9352",
+            "method": "DELETE",
             "sortNum": 5000,
             "created": "2025-05-25T18:41:10.336Z",
-            "modified": "2025-07-07T03:55:53.187Z",
+            "modified": "2025-07-16T03:21:11.204Z",
             "headers": []
         },
         {
@@ -303,31 +317,25 @@
         {
             "_id": "b396b153-344f-4bea-9069-5a5503ec2372",
             "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
-            "containerId": "",
-            "name": "deploy CMS138PlanDefinition Library",
-            "url": "Library/CMS138PlanDefinition",
-            "method": "PUT",
-            "sortNum": 150000,
+            "containerId": "c02d07dc-f4eb-495d-a3f2-51c5c1b0fd62",
+            "name": "locate CMS138PlanDefinition Library",
+            "url": "Library/CMS138PlanDefinition/_history",
+            "method": "GET",
+            "sortNum": 10000,
             "created": "2025-07-16T02:41:29.136Z",
-            "modified": "2025-07-16T02:42:21.079Z",
-            "headers": [],
-            "body": {
-                "type": "binary",
-                "raw": "",
-                "form": [],
-                "binary": "../input/resources/library/Library-CMS138PlanDefinition-0.2.001.json"
-            }
+            "modified": "2025-07-16T03:39:35.071Z",
+            "headers": []
         },
         {
             "_id": "3ad2cba2-1d90-4ba7-85a5-be005a592149",
             "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
             "containerId": "9bb4c529-c8e0-432c-8b75-2d615cb46267",
             "name": "find TobaccoRecommendation",
-            "url": "PlanDefinition/TobaccoRecommendation",
+            "url": "PlanDefinition/TobaccoRecommendation/_history",
             "method": "GET",
             "sortNum": 5000,
             "created": "2025-07-16T02:48:56.585Z",
-            "modified": "2025-07-16T02:49:45.806Z",
+            "modified": "2025-07-16T03:26:08.373Z",
             "headers": []
         },
         {
@@ -357,6 +365,112 @@
                 "type": "json",
                 "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [\n    {\n      \"name\": \"limit\",\n      \"valueInteger\": 1000\n    },{\n      \"name\": \"expungeDeletedResources\",\n      \"valueBoolean\": true\n    },{\n      \"name\": \"expungePreviousVersions\",\n      \"valueBoolean\": true\n    }\n  ]\n}",
                 "form": []
+            }
+        },
+        {
+            "_id": "4cadae44-9360-42e0-8949-5934f9a36c80",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "3403fb01-83fe-4709-a4a7-70abf0bdbded",
+            "name": "find TobaccoRecommendation",
+            "url": "ActivityDefinition/TobaccoCandidate/_history",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2025-07-16T03:32:53.249Z",
+            "modified": "2025-07-16T03:34:14.384Z",
+            "headers": []
+        },
+        {
+            "_id": "ca1a52a2-72da-4823-aa2f-87ddf953ab7b",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "3403fb01-83fe-4709-a4a7-70abf0bdbded",
+            "name": "deploy TobaccoCandidate",
+            "url": "ActivityDefinition/TobaccoCandidate",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2025-07-16T03:32:53.250Z",
+            "modified": "2025-07-16T03:35:26.497Z",
+            "headers": [],
+            "body": {
+                "type": "binary",
+                "raw": "",
+                "form": [],
+                "binary": "../input/resources/activitydefinition/ActivityDefinition-TobaccoCandidate.json"
+            }
+        },
+        {
+            "_id": "f46ba81e-9301-4199-bd83-184628e2be3e",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "3403fb01-83fe-4709-a4a7-70abf0bdbded",
+            "name": "delete it",
+            "url": "ActivityDefinition/TobaccoCandidate",
+            "method": "DELETE",
+            "sortNum": 7500,
+            "created": "2025-07-16T03:32:53.252Z",
+            "modified": "2025-07-16T03:35:05.835Z",
+            "headers": []
+        },
+        {
+            "_id": "101deafb-df0a-4c9a-990c-cfa05ce82f57",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "3403fb01-83fe-4709-a4a7-70abf0bdbded",
+            "name": "expunge it",
+            "url": "ActivityDefinition/TobaccoCandidate/$expunge",
+            "method": "POST",
+            "sortNum": 8750,
+            "created": "2025-07-16T03:32:53.253Z",
+            "modified": "2025-07-16T03:35:15.944Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [\n    {\n      \"name\": \"limit\",\n      \"valueInteger\": 1000\n    },{\n      \"name\": \"expungeDeletedResources\",\n      \"valueBoolean\": true\n    },{\n      \"name\": \"expungePreviousVersions\",\n      \"valueBoolean\": true\n    }\n  ]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "682d3d4f-1ea2-4cfa-9d30-d5107f72100c",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "c02d07dc-f4eb-495d-a3f2-51c5c1b0fd62",
+            "name": "delte CMS138PlanDefinition Library",
+            "url": "Library/CMS138PlanDefinition",
+            "method": "DELETE",
+            "sortNum": 20000,
+            "created": "2025-07-16T03:39:01.666Z",
+            "modified": "2025-07-16T03:40:00.169Z",
+            "headers": []
+        },
+        {
+            "_id": "b05a15e4-68fd-4a13-9f57-01222edd4320",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "c02d07dc-f4eb-495d-a3f2-51c5c1b0fd62",
+            "name": "expunge CMS138PlanDefinitionLibrary",
+            "url": "Library/CMS138PlanDefinition/$expunge",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-07-16T03:39:04.658Z",
+            "modified": "2025-07-16T03:40:56.995Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [\n    {\n      \"name\": \"limit\",\n      \"valueInteger\": 1000\n    },{\n      \"name\": \"expungeDeletedResources\",\n      \"valueBoolean\": true\n    },{\n      \"name\": \"expungePreviousVersions\",\n      \"valueBoolean\": true\n    }\n  ]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "41cebf65-0612-4635-b35e-8c7712326252",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "c02d07dc-f4eb-495d-a3f2-51c5c1b0fd62",
+            "name": "deploy CMS138PlanDefinition Library",
+            "url": "Library/CMS138PlanDefinition",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2025-07-16T03:39:07.349Z",
+            "modified": "2025-07-16T03:39:07.349Z",
+            "headers": [],
+            "body": {
+                "type": "binary",
+                "raw": "",
+                "form": [],
+                "binary": "../input/resources/library/Library-CMS138PlanDefinition-0.2.001.json"
             }
         }
     ],

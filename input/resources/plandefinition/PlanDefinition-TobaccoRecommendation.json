@@ -11,17 +11,54 @@
         "system": "http://terminology.hl7.org/CodeSystem/library-type",
         "code": "module-definition"
       } ]
-    }
+    },
+    "parameter": [ {
+      "name": "Measurement Period",
+      "use": "in",
+      "min": 0,
+      "max": "1",
+      "type": "Period"
+    }, {
+      "name": "Candidate",
+      "use": "out",
+      "min": 0,
+      "max": "1",
+      "type": "boolean"
+    } ],
+    "dataRequirement": [ {
+      "type": "Patient",
+      "profile": [ "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient" ]
+    } ]
   } ],
   "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/cqf-logicDefinition",
+    "extension": [ {
+      "url": "libraryName",
+      "valueString": "CMS138PlanDefinition"
+    }, {
+      "url": "name",
+      "valueString": "Candidate"
+    }, {
+      "url": "statement",
+      "valueString": "define Candidate: AgeInYearsAt(date from start of \"Measurement Period\") >= 12"
+    }, {
+      "url": "displaySequence",
+      "valueInteger": 0
+    } ]
+  }, {
     "id": "effective-data-requirements",
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
     "valueCanonical": "#effective-data-requirements"
+  }, {
+    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
   } ],
   "url": "https://madie.cms.gov/PlanDefinition/TobaccoRecommendation",
   "name": "TobaccoRecommendation",
   "title": "Tobacco Recommendation",
-  "date": "2025-07-15T16:33:26-10:00",
+  "date": "2025-07-15T17:37:33-10:00",
   "description": "Record a Tobacco Encounter",
   "library": [ "https://madie.cms.gov/Library/CMS138PlanDefinition" ],
   "action": [ {
@@ -30,7 +67,7 @@
       "kind": "applicability",
       "expression": {
         "language": "text/cql-identifier",
-        "expression": "Candidate"
+        "expression": "NeedsAnEncounter"
       }
     } ],
     "definitionCanonical": "https://madie.cms.gov/ActivityDefinition/TobaccoCandidate"
