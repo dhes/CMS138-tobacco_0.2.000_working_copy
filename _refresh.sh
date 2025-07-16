@@ -1,37 +1,32 @@
 #!/bin/bash
-#DO NOT EDIT WITH WINDOWS
-tooling_jar=tooling-cli-3.8.0.jar
+
 input_cache_path=./input-cache
 ig_ini_path=$PWD/ig.ini
+tooling_jar=tooling-cli-3.8.0.jar
 
-set -e
-set -x
+set -e  # Stop execution if any command fails
+set -x  # Print each command before executing
+
 echo Checking internet connection...
 wget -q --spider tx.fhir.org
 
-if [ $? -eq 0 ]; then
-	echo "Online"
-	# fsoption="-fs=https://fhir.ecqm.icfcloud.com/fhir"
-	fsoption=""
-else
-	echo "Offline"
-	fsoption=""
-fi
-
-echo "$fsoption"
-
 tooling=$input_cache_path/$tooling_jar
 if test -f "$tooling"; then
-	java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -e=json -x -lop=output/resources/library -mop=output/resources/measure $fsoption
-	# java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -x $fsoption
+  # --root-dir=. String: Root directory of the IG
+	# --librarypath path to CQL libraries
+	# --resourcepath path to resources (which?)
+	# --include-dependencies false by default
+	# --include-patients 
+	java -jar $tooling \
+		-RefreshIG \
+		-ini="$ig_ini_path" \
+		--include-terminology \
+		--include-errors \
+		--libraryOutputPath=output/resources/library \
+		--measureOutputPath=output/resources/measure \
+		--root-dir=. \
+		--librarypath=input/cql \
+		--resourcepath=input 
 else
-	tooling=../$tooling_jar
-	echo $tooling
-	if test -f "$tooling"; then
-		java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -e=json -x -lop=output/resources/library -mop=output/resources/measure
- $fsoption
-		# java -jar $tooling -RefreshIG -ini="$ig_ini_path" -p -t -x $fsoption
-	else
-		echo IG Refresh NOT FOUND in input-cache or parent folder.  Please run _updateCQFTooling.  Aborting...
-	fi
+	echo "IG Refresh NOT FOUND in input-cache. Please run _updateCQFTooling. Aborting..."
 fi

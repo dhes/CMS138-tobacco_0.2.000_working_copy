@@ -1,0 +1,1 @@
+java -jar input-cache/tooling-cli-3.8.0.jar -RefreshIG -help
