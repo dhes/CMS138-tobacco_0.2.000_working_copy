@@ -1,0 +1,38 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "TobaccoRecommendation",
+  "contained": [ {
+    "resourceType": "Library",
+    "id": "effective-data-requirements",
+    "name": "EffectiveDataRequirements",
+    "status": "active",
+    "type": {
+      "coding": [ {
+        "system": "http://terminology.hl7.org/CodeSystem/library-type",
+        "code": "module-definition"
+      } ]
+    }
+  } ],
+  "extension": [ {
+    "id": "effective-data-requirements",
+    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
+    "valueCanonical": "#effective-data-requirements"
+  } ],
+  "url": "https://madie.cms.gov/PlanDefinition/TobaccoRecommendation",
+  "name": "TobaccoRecommendation",
+  "title": "Tobacco Recommendation",
+  "date": "2025-07-15T16:33:26-10:00",
+  "description": "Record a Tobacco Encounter",
+  "library": [ "https://madie.cms.gov/Library/CMS138PlanDefinition" ],
+  "action": [ {
+    "textEquivalent": "Candidate for Tobacco Action",
+    "condition": [ {
+      "kind": "applicability",
+      "expression": {
+        "language": "text/cql-identifier",
+        "expression": "Candidate"
+      }
+    } ],
+    "definitionCanonical": "https://madie.cms.gov/ActivityDefinition/TobaccoCandidate"
+  } ]
+}

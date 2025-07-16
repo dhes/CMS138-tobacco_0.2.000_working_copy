@@ -1,0 +1,49 @@
+{
+    "_id": "5194ea1b-3d71-4e13-a63c-f8f5f1765b52",
+    "colName": "$apply",
+    "created": "2025-07-16T02:37:42.938Z",
+    "sortNum": 30000,
+    "folders": [],
+    "settings": {
+        "headers": [
+            {
+                "name": "Content-Type",
+                "value": "application/fhir+json"
+            }
+        ],
+        "options": {
+            "baseUrl": "{{FHIR_SERVER_URL}}"
+        }
+    },
+    "requests": [
+        {
+            "_id": "91bc075f-b746-480e-8a7b-80ff2584bf88",
+            "colId": "5194ea1b-3d71-4e13-a63c-f8f5f1765b52",
+            "containerId": "",
+            "name": "TobaccoRecommendation",
+            "url": "PlanDefinition/TobaccoRecommendation/$apply?subject=Patient/minimal-test&periodStart=2025-01-01&periodEnd=2025-12-31",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-07-16T02:37:42.945Z",
+            "modified": "2025-07-16T02:46:37.329Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "subject",
+                    "value": "Patient/minimal-test",
+                    "isPath": false
+                },
+                {
+                    "name": "periodStart",
+                    "value": "2025-01-01",
+                    "isPath": false
+                },
+                {
+                    "name": "periodEnd",
+                    "value": "2025-12-31",
+                    "isPath": false
+                }
+            ]
+        }
+    ]
+}

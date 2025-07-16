@@ -17,6 +17,13 @@
             "containerId": "11d5b193-cb19-4325-9b3d-ca27af762229",
             "created": "2025-05-19T21:08:16.513Z",
             "sortNum": 20000
+        },
+        {
+            "_id": "9bb4c529-c8e0-432c-8b75-2d615cb46267",
+            "name": "update PlanDefinition TobaccoRecommendation",
+            "containerId": "",
+            "created": "2025-07-16T02:48:29.052Z",
+            "sortNum": 30000
         }
     ],
     "requests": [
@@ -274,6 +281,83 @@
             "created": "2025-05-25T18:41:10.336Z",
             "modified": "2025-07-07T03:55:53.187Z",
             "headers": []
+        },
+        {
+            "_id": "db478371-3100-4c19-804d-4d35400a08e7",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "9bb4c529-c8e0-432c-8b75-2d615cb46267",
+            "name": "deploy CMS138PlanDefinition",
+            "url": "PlanDefinition/TobaccoRecommendation",
+            "method": "PUT",
+            "sortNum": 10000,
+            "created": "2025-07-16T02:40:23.865Z",
+            "modified": "2025-07-16T02:43:51.659Z",
+            "headers": [],
+            "body": {
+                "type": "binary",
+                "raw": "",
+                "form": [],
+                "binary": "../input/resources/plandefinition/PlanDefinition-TobaccoRecommendation.json"
+            }
+        },
+        {
+            "_id": "b396b153-344f-4bea-9069-5a5503ec2372",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "",
+            "name": "deploy CMS138PlanDefinition Library",
+            "url": "Library/CMS138PlanDefinition",
+            "method": "PUT",
+            "sortNum": 150000,
+            "created": "2025-07-16T02:41:29.136Z",
+            "modified": "2025-07-16T02:42:21.079Z",
+            "headers": [],
+            "body": {
+                "type": "binary",
+                "raw": "",
+                "form": [],
+                "binary": "../input/resources/library/Library-CMS138PlanDefinition-0.2.001.json"
+            }
+        },
+        {
+            "_id": "3ad2cba2-1d90-4ba7-85a5-be005a592149",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "9bb4c529-c8e0-432c-8b75-2d615cb46267",
+            "name": "find TobaccoRecommendation",
+            "url": "PlanDefinition/TobaccoRecommendation",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2025-07-16T02:48:56.585Z",
+            "modified": "2025-07-16T02:49:45.806Z",
+            "headers": []
+        },
+        {
+            "_id": "23bd9ad5-0fb1-4cc3-80b6-616f4ba22fce",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "9bb4c529-c8e0-432c-8b75-2d615cb46267",
+            "name": "delete it",
+            "url": "PlanDefinition/TobaccoRecommendation",
+            "method": "DELETE",
+            "sortNum": 15000,
+            "created": "2025-07-16T02:49:55.343Z",
+            "modified": "2025-07-16T02:51:49.478Z",
+            "headers": []
+        },
+        {
+            "_id": "915eafad-35df-4a45-bbe7-e3e988421e8b",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "9bb4c529-c8e0-432c-8b75-2d615cb46267",
+            "name": "expunge it",
+            "url": "PlanDefinition/TobaccoRecommendation/$expunge",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2025-07-16T02:50:44.761Z",
+            "modified": "2025-07-16T02:51:44.788Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [\n    {\n      \"name\": \"limit\",\n      \"valueInteger\": 1000\n    },{\n      \"name\": \"expungeDeletedResources\",\n      \"valueBoolean\": true\n    },{\n      \"name\": \"expungePreviousVersions\",\n      \"valueBoolean\": true\n    }\n  ]\n}",
+                "form": []
+            }
         }
     ],
     "settings": {

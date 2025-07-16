@@ -17,16 +17,18 @@ if test -f "$tooling"; then
 	# --resourcepath path to resources (which?)
 	# --include-dependencies false by default
 	# --include-patients 
+	# --libraryOutputPath=output/resources/library \
+	# --measureOutputPath=output/resources/measure \
+	# --resourcepath=input 
+	# --librarypath=input/cql \
+	# --root-dir=. \
+
 	java -jar $tooling \
 		-RefreshIG \
 		-ini="$ig_ini_path" \
 		--include-terminology \
 		--include-errors \
-		--libraryOutputPath=output/resources/library \
-		--measureOutputPath=output/resources/measure \
-		--root-dir=. \
-		--librarypath=input/cql \
-		--resourcepath=input 
+
 else
 	echo "IG Refresh NOT FOUND in input-cache. Please run _updateCQFTooling. Aborting..."
 fi
