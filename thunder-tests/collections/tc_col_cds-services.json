@@ -1,0 +1,37 @@
+{
+    "_id": "d17fc7a9-005a-4f6e-a0b1-3c491c382e37",
+    "colName": "cds-services",
+    "created": "2025-07-17T03:04:25.834Z",
+    "sortNum": 30000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4f84cd55-0bca-4dd7-a002-c9a7fb2cde37",
+            "colId": "d17fc7a9-005a-4f6e-a0b1-3c491c382e37",
+            "containerId": "",
+            "name": "TobaccoRecommendation",
+            "url": "TobaccoRecommendation",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-07-17T03:06:23.150Z",
+            "modified": "2025-07-17T03:20:08.574Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"hookInstance\": \"patient-view-test-123\",\n  \"fhirServer\": \"http://localhost:8080/fhir\",\n  \"hook\": \"patient-view\",\n  \"context\": {\n    \"patientId\": \"minimal-test\",\n    \"userId\": \"Practitioner/example\"\n  },\n  \"prefetch\": {}\n}",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "Content-Type",
+                "value": "application/json"
+            }
+        ],
+        "options": {
+            "baseUrl": "{{CDS_HOOKS_URL}}"
+        }
+    }
+}
