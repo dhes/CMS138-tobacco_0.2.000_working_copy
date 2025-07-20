@@ -1,14 +1,14 @@
 {
-    "resourceType": "ActivityDefinition",
-    "id": "TobaccoCandidate",
-    "url": "https://madie.cms.gov/ActivityDefinition/TobaccoCandidate",
-    "name": "TobaccoCandidate",
-    "title": "Tobacco Candidate",
-    "status": "active",
-    "experimental": true,
-    "description": "This patient is a candidate for tobacco action.",
-    "kind": "Task",
-    "intent": "proposal",
-    "priority": "routine"
-
+  "resourceType": "ActivityDefinition",
+  "id": "TobaccoCandidate",
+  "url": "https://madie.cms.gov/ActivityDefinition/TobaccoCandidate",
+  "name": "TobaccoCandidate",
+  "title": "Tobacco Candidate",
+  "status": "active",
+  "experimental": true,
+  "library": ["https://madie.cms.gov/Library/CMS138PlanDefinition"],
+  "description": "This patient is a candidate for tobacco action.",
+  "kind": "Task",
+  "intent": "proposal",
+  "priority": "routine"
 }

@@ -55,7 +55,7 @@ define EnoughQualifyingEncounters: if Count("Qualifying Visit During Measurement
 
 define ExistPreventiveEncounter: if exists "Preventive Visit During Measurement Period" then 'true' else 'false'
 
-define AnyEncounterThisYear: if exists[Encounter] E where E.period.toInterval ( ) during day of "Measurement Period" then 'true' else 'false'
+define NoEncounterThisYear: not exists [Encounter] E where E.period.toInterval ( ) during day of "Measurement Period"
 
 define NeedsAnEncounter: Candidate and not "Initial Population"
 
