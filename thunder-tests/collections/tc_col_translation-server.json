@@ -1,0 +1,54 @@
+{
+    "_id": "a3b4e30b-655f-41bf-acfb-a58d7c3bf4ee",
+    "colName": "translation-server",
+    "created": "2025-07-22T04:36:55.756Z",
+    "sortNum": 40000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "b71e9914-ec8c-437d-9212-9889c735064f",
+            "colId": "a3b4e30b-655f-41bf-acfb-a58d7c3bf4ee",
+            "containerId": "",
+            "name": "madie measure",
+            "url": "?format=json",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-07-22T04:38:47.943Z",
+            "modified": "2025-07-22T05:14:34.993Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                }
+            ],
+            "params": [
+                {
+                    "name": "format",
+                    "value": "json",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "text",
+                "raw": "library AppleADay version '0.0.001'\n\nusing QICore version '6.0.0'\n\ncontext Patient\n\ndefine AppleADay: 'An apple a day.'",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "Content-Type",
+                "value": "application/cql"
+            },
+            {
+                "name": "Accept",
+                "value": "application/elm+json"
+            }
+        ],
+        "options": {
+            "baseUrl": "http://localhost:8082/cql/translator"
+        }
+    }
+}

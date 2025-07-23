@@ -413,7 +413,7 @@
       "valueString": "NoEncounterThisYear"
     }, {
       "url": "statement",
-      "valueString": "define NoEncounterThisYear: not exists [Encounter] E where E.period.toInterval ( ) during day of \"Measurement Period\""
+      "valueString": "define NoEncounterThisYear: Count((([Encounter]).isEncounterPerformed ( )) E\n  where E.period.toInterval ( ) during day of \"Measurement Period\") = 0"
     }, {
       "url": "displaySequence",
       "valueInteger": 5
@@ -497,6 +497,11 @@
     "id": "effective-data-requirements",
     "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-effectiveDataRequirements",
     "valueCanonical": "#effective-data-requirements"
+  }, {
+    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
   } ],
   "url": "https://madie.cms.gov/PlanDefinition/TobaccoRecommendation",
   "name": "TobaccoRecommendation",
@@ -509,7 +514,7 @@
     } ]
   },
   "status": "active",
-  "date": "2025-07-19T19:25:25-10:00",
+  "date": "2025-07-22T11:42:31-10:00",
   "description": "Record a Tobacco Encounter",
   "library": [ "https://madie.cms.gov/Library/CMS138PlanDefinition" ],
   "action": [ {

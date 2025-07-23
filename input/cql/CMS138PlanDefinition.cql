@@ -45,7 +45,7 @@ code "Postoperative follow-up visit, normally included in the surgical package, 
 code "Tobacco abuse counseling": 'Z71.6' from "ICD10CM" display 'Tobacco abuse counseling'
 code "Unlisted preventive medicine service": '99429' from "CPT" display 'Unlisted preventive medicine service'
 
-parameter "Measurement Period" Interval<DateTime> // default Interval[@2025-01-01T00:00:00.0, @2025-12-31T23:59:59.999]
+parameter "Measurement Period" Interval<DateTime> default Interval[@2025-01-01T00:00:00.0, @2025-12-31T23:59:59.999]
 
 context Patient
 
@@ -55,7 +55,8 @@ define EnoughQualifyingEncounters: if Count("Qualifying Visit During Measurement
 
 define ExistPreventiveEncounter: if exists "Preventive Visit During Measurement Period" then 'true' else 'false'
 
-define NoEncounterThisYear: not exists [Encounter] E where E.period.toInterval ( ) during day of "Measurement Period"
+define NoEncounterThisYear: Count((([Encounter]).isEncounterPerformed ( )) E
+  where E.period.toInterval ( ) during day of "Measurement Period") = 0
 
 define NeedsAnEncounter: Candidate and not "Initial Population"
 

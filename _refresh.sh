@@ -28,7 +28,7 @@ if test -f "$tooling"; then
 		-ini="$ig_ini_path" \
 		--include-terminology \
 		--include-errors \
-
+		--include-patients 
 else
 	echo "IG Refresh NOT FOUND in input-cache. Please run _updateCQFTooling. Aborting..."
 fi
