@@ -1,0 +1,70 @@
+{
+    "_id": "f3e0f743-0e89-4a7e-93c5-c1cad9133969",
+    "colName": "alphora server",
+    "created": "2025-08-04T21:55:49.669Z",
+    "sortNum": 70000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "718e2bc1-647c-4074-b4a4-1b05e1a1a32d",
+            "colId": "f3e0f743-0e89-4a7e-93c5-c1cad9133969",
+            "containerId": "",
+            "name": "Patient P48",
+            "url": "Patient/P48",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2025-08-04T21:56:29.730Z",
+            "modified": "2025-08-04T22:48:42.928Z",
+            "headers": []
+        },
+        {
+            "_id": "c9a1e2c7-df99-4371-9660-eeeef4e56df5",
+            "colId": "f3e0f743-0e89-4a7e-93c5-c1cad9133969",
+            "containerId": "",
+            "name": "Patient P48 using _id",
+            "url": "Patient?_id=P48",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2025-08-04T22:48:30.686Z",
+            "modified": "2025-08-04T22:49:30.547Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "_id",
+                    "value": "P48",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "76ba8fd5-0fc1-4fa7-bbf5-387e167e5978",
+            "colId": "f3e0f743-0e89-4a7e-93c5-c1cad9133969",
+            "containerId": "",
+            "name": "Patients",
+            "url": "Patient/P48?_elements=id,name.family,name.given",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2025-08-10T02:49:17.624Z",
+            "modified": "2025-08-10T03:02:05.958Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "_elements",
+                    "value": "id,name.family,name.given",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "Content-Type",
+                "value": "application/fhir+json"
+            }
+        ],
+        "options": {
+            "baseUrl": "https://cloud.alphora.com/sandbox/r4/cqm/fhir/"
+        }
+    }
+}

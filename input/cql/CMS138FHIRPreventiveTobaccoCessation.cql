@@ -45,9 +45,11 @@ code "Postoperative follow-up visit, normally included in the surgical package, 
 code "Tobacco abuse counseling": 'Z71.6' from "ICD10CM" display 'Tobacco abuse counseling'
 code "Unlisted preventive medicine service": '99429' from "CPT" display 'Unlisted preventive medicine service'
 
-parameter "Measurement Period" Interval<DateTime>
+parameter "Measurement Period" Interval<DateTime>  default Interval [@2026-01-01T00:00:00, @2026-12-31T23:59:59]
 
 context Patient
+
+define CqlDateTimeHour: DateTime(2012, 4, 4, 12)
 
 define "Denominator 1":
   "Initial Population"
@@ -175,3 +177,24 @@ define "SDE Race":
 
 define "SDE Sex":
   SDE."SDE Sex"
+
+define PatientScore1:
+  case
+    when not (Coalesce("Denominator 1", false) and not Coalesce("Denominator Exclusion", false) ) then null
+    when Coalesce("Numerator 1", false) then 1
+    else 0
+  end
+
+define PatientScore2:
+  case
+    when not (Coalesce("Denominator 2", false) and not Coalesce("Denominator Exclusion", false) ) then null
+    when Coalesce("Numerator 2", false) then 1
+    else 0
+  end
+
+define PatientScore3:
+  case
+    when not (Coalesce("Denominator 3", false) and not Coalesce("Denominator Exclusion", false) ) then null
+    when Coalesce("Numerator 3", false) then 1
+    else 0
+  end

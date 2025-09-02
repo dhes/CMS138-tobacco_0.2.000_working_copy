@@ -18,15 +18,15 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library Status",
-      "resource": "https://madie.cms.gov/Library/Status|1.13.000"
+      "resource": "Library/Status|1.13.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "https://madie.cms.gov/Library/FHIRHelpers|4.4.000"
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "https://madie.cms.gov/Library/QICoreCommon|4.0.000"
+      "resource": "Library/QICoreCommon|4.0.000"
     }, {
       "type": "depends-on",
       "display": "Code system CPT",
@@ -514,7 +514,7 @@
     } ]
   },
   "status": "active",
-  "date": "2025-07-22T11:42:31-10:00",
+  "date": "2025-08-04T10:33:52-10:00",
   "description": "Record a Tobacco Encounter",
   "library": [ "https://madie.cms.gov/Library/CMS138PlanDefinition" ],
   "action": [ {

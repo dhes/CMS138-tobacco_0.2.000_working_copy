@@ -22,13 +22,15 @@ if test -f "$tooling"; then
 	# --resourcepath=input 
 	# --librarypath=input/cql \
 	# --root-dir=. \
+	# see REFRESH-OPTIONS.md for full list
 
 	java -jar $tooling \
 		-RefreshIG \
 		-ini="$ig_ini_path" \
 		--include-terminology \
 		--include-errors \
-		--include-patients 
+		--include-patients \
+		--include-dependencies
 else
 	echo "IG Refresh NOT FOUND in input-cache. Please run _updateCQFTooling. Aborting..."
 fi

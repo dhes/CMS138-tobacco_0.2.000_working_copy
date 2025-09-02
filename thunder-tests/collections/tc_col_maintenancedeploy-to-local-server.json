@@ -1,6 +1,6 @@
 {
     "_id": "db209519-97e2-4f95-905f-ef15624e0bc7",
-    "colName": "maintenance",
+    "colName": "maintenance/deploy to local server",
     "created": "2025-05-01T23:26:12.721Z",
     "sortNum": 10000,
     "folders": [
@@ -45,6 +45,13 @@
             "containerId": "",
             "created": "2025-07-20T05:04:32.171Z",
             "sortNum": 50000
+        },
+        {
+            "_id": "152a2f58-afe8-47ab-a7c4-0f155449115e",
+            "name": "localhost $cql experiments",
+            "containerId": "",
+            "created": "2025-08-11T19:16:19.862Z",
+            "sortNum": 60000
         }
     ],
     "requests": [
@@ -296,12 +303,19 @@
             "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
             "containerId": "",
             "name": "misc",
-            "url": "Patient/minimal-test/$everything",
+            "url": "Patient?_id=ed2fe491-3eb7-424a-bf95-5d44b6102cec",
             "method": "GET",
             "sortNum": 5000,
             "created": "2025-05-25T18:41:10.336Z",
-            "modified": "2025-07-20T06:04:24.599Z",
-            "headers": []
+            "modified": "2025-08-11T01:07:13.634Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "_id",
+                    "value": "ed2fe491-3eb7-424a-bf95-5d44b6102cec",
+                    "isPath": false
+                }
+            ]
         },
         {
             "_id": "db478371-3100-4c19-804d-4d35400a08e7",
@@ -523,6 +537,150 @@
             "body": {
                 "type": "json",
                 "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [\n    {\n      \"name\": \"limit\",\n      \"valueInteger\": 1000\n    },{\n      \"name\": \"expungeDeletedResources\",\n      \"valueBoolean\": true\n    },{\n      \"name\": \"expungePreviousVersions\",\n      \"valueBoolean\": true\n    }\n  ]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "c33f1977-6e5a-4617-a015-70795008e7f3",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "",
+            "name": "deploy tobacco bundle",
+            "url": "",
+            "method": "POST",
+            "sortNum": 140000,
+            "created": "2025-08-11T00:50:08.575Z",
+            "modified": "2025-08-11T00:50:29.017Z",
+            "headers": [],
+            "body": {
+                "type": "binary",
+                "raw": "",
+                "form": [],
+                "binary": "../bundles/measure/CMS138FHIRPreventiveTobaccoCessation/CMS138FHIRPreventiveTobaccoCessation-bundle.json"
+            }
+        },
+        {
+            "_id": "f3014a82-d075-43ac-afaa-e37cbaf27b8b",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "",
+            "name": "deploy Practitioner/example",
+            "url": "Practitioner/example",
+            "method": "PUT",
+            "sortNum": 150000,
+            "created": "2025-08-11T00:51:37.033Z",
+            "modified": "2025-08-11T00:51:51.989Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"resourceType\": \"Practitioner\",\n  \"id\": \"example\",\n  \"active\": true,\n  \"name\": [\n    {\n      \"family\": \"Example\",\n      \"given\": [\"Test\"]\n    }\n  ]\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "8b2897e7-9a5d-477f-96e5-3ec89f162230",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "",
+            "name": "deploy simple-test patient",
+            "url": "Patient/simple-test",
+            "method": "PUT",
+            "sortNum": 160000,
+            "created": "2025-08-11T04:34:03.997Z",
+            "modified": "2025-08-11T04:34:34.055Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"resourceType\": \"Patient\",\n    \"id\": \"simple-test\",\n    \"name\": [{\"family\": \"Test\", \"given\": [\"Simple\"]}],\n    \"gender\": \"female\",\n    \"birthDate\": \"1990-01-01\"\n  }\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "0ef37ec6-6ab9-4e72-9fc8-5d48d27158e6",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "",
+            "name": "simulate CQL Runner call with parameter \"Measurement Period\"",
+            "url": "",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2025-08-11T17:25:29.611Z",
+            "modified": "2025-08-11T17:25:29.611Z",
+            "headers": []
+        },
+        {
+            "_id": "28ed8676-5f13-4913-8263-23b76d3a98fe",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "152a2f58-afe8-47ab-a7c4-0f155449115e",
+            "name": "Measurement Period absent",
+            "url": "$cql",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2025-08-11T19:16:47.748Z",
+            "modified": "2025-08-11T21:13:17.227Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"parameter\": [\n    {\n      \"name\": \"content\",\n      \"valueString\": \"library CMS138FHIRPreventiveTobaccoCessation version '0.2.001'\\n// parameter \\\"Measurement Period\\\" Interval<DateTime> default Interval [@2025-01-01T00:00:00, @2025-12-31T23:59:59]\\n/*  using FHIR version '4.0.1'\\n  using QICore version '6.0.0'\\n  context Patient\\n\\n  define Hello: 'World'\\n  define FamilyName: Patient.name[0].family\\n  define GivenName: Patient.name[0].given[0]\\n*/\"\n    },\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"ed2fe491-3eb7-424a-bf95-5d44b6102cec\"\n    },\n    null,\n    {\n      \"name\": \"dataEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"terminologyEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"contentEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    }\n  ],\n  \"resourceType\": \"Parameters\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "04963a67-19aa-44de-be23-f917660a3a93",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "152a2f58-afe8-47ab-a7c4-0f155449115e",
+            "name": "Measurement Period present",
+            "url": "$cql",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2025-08-11T21:12:07.913Z",
+            "modified": "2025-08-11T21:12:07.913Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"parameter\": [\n    {\n      \"name\": \"content\",\n      \"valueString\": \"library CMS138FHIRPreventiveTobaccoCessation version '0.2.001'\\n// parameter \\\"Measurement Period\\\" Interval<DateTime> default Interval [@2025-01-01T00:00:00, @2025-12-31T23:59:59]\\n/*  using FHIR version '4.0.1'\\n  using QICore version '6.0.0'\\n  context Patient\\n\\n  define Hello: 'World'\\n  define FamilyName: Patient.name[0].family\\n  define GivenName: Patient.name[0].given[0]\\n*/\"\n    },\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"ed2fe491-3eb7-424a-bf95-5d44b6102cec\"\n    },\n    null,\n    {\n      \"name\": \"dataEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"terminologyEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"contentEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"parameters\",\n      \"resource\": {\n        \"resourceType\": \"Parameters\",\n        \"parameter\": [\n          {\n            \"name\": \"Measurement Period\",\n            \"valuePeriod\": {\n              \"start\": \"2025-01-01T00:00:00\",\n              \"end\": \"2025-12-31T23:59:59\"\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"resourceType\": \"Parameters\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "7e5d75be-5d6d-4e75-bda8-950d24c8b8bd",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "152a2f58-afe8-47ab-a7c4-0f155449115e",
+            "name": "Measurement Period present 2026",
+            "url": "$cql",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2025-08-11T21:17:02.451Z",
+            "modified": "2025-08-11T21:17:31.376Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"parameter\": [\n    {\n      \"name\": \"content\",\n      \"valueString\": \"library CMS138FHIRPreventiveTobaccoCessation version '0.2.001'\\n// parameter \\\"Measurement Period\\\" Interval<DateTime> default Interval [@2025-01-01T00:00:00, @2025-12-31T23:59:59]\\n/*  using FHIR version '4.0.1'\\n  using QICore version '6.0.0'\\n  context Patient\\n\\n  define Hello: 'World'\\n  define FamilyName: Patient.name[0].family\\n  define GivenName: Patient.name[0].given[0]\\n*/\"\n    },\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"ed2fe491-3eb7-424a-bf95-5d44b6102cec\"\n    },\n    null,\n    {\n      \"name\": \"dataEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"terminologyEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"contentEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"parameters\",\n      \"resource\": {\n        \"resourceType\": \"Parameters\",\n        \"parameter\": [\n          {\n            \"name\": \"Measurement Period\",\n            \"valuePeriod\": {\n              \"start\": \"2026-01-01T00:00:00\",\n              \"end\": \"2026-12-31T23:59:59\"\n            }\n          }\n        ]\n      }\n    }\n  ],\n  \"resourceType\": \"Parameters\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "8e57935c-f70f-4d16-b142-dbbd79b235e0",
+            "colId": "db209519-97e2-4f95-905f-ef15624e0bc7",
+            "containerId": "152a2f58-afe8-47ab-a7c4-0f155449115e",
+            "name": "Measurement Period in call",
+            "url": "$cql?periodStart=2026-01-01&periodEnd=2026-12-31",
+            "method": "POST",
+            "sortNum": 185000,
+            "created": "2025-08-11T21:35:01.464Z",
+            "modified": "2025-08-11T21:35:49.066Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "periodStart",
+                    "value": "2026-01-01",
+                    "isPath": false
+                },
+                {
+                    "name": "periodEnd",
+                    "value": "2026-12-31",
+                    "isPath": false
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"parameter\": [\n    {\n      \"name\": \"content\",\n      \"valueString\": \"library CMS138FHIRPreventiveTobaccoCessation version '0.2.001'\\n// parameter \\\"Measurement Period\\\" Interval<DateTime> default Interval [@2025-01-01T00:00:00, @2025-12-31T23:59:59]\\n/*  using FHIR version '4.0.1'\\n  using QICore version '6.0.0'\\n  context Patient\\n\\n  define Hello: 'World'\\n  define FamilyName: Patient.name[0].family\\n  define GivenName: Patient.name[0].given[0]\\n*/\"\n    },\n    {\n      \"name\": \"subject\",\n      \"valueString\": \"ed2fe491-3eb7-424a-bf95-5d44b6102cec\"\n    },\n    null,\n    {\n      \"name\": \"dataEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"terminologyEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    },\n    {\n      \"name\": \"contentEndpoint\",\n      \"resource\": {\n        \"address\": \"http://localhost:8080/fhir\",\n        \"connectionType\": {\n          \"code\": \"hl7-fhir-rest\",\n          \"system\": \"http://terminology.hl7.org/CodeSystem/endpoint-connection-type\"\n        },\n        \"header\": [\n          \"Content-Type: application/json\"\n        ],\n        \"resourceType\": \"Endpoint\",\n        \"status\": \"active\"\n      }\n    }\n  ],\n  \"resourceType\": \"Parameters\"\n}",
                 "form": []
             }
         }

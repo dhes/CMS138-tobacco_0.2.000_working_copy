@@ -729,27 +729,27 @@
     "relatedArtifact": [ {
       "type": "depends-on",
       "display": "Library SDE",
-      "resource": "https://madie.cms.gov/Library/SupplementalDataElements|5.1.000"
+      "resource": "Library/SupplementalDataElements|5.1.000"
     }, {
       "type": "depends-on",
       "display": "Library FHIRHelpers",
-      "resource": "https://madie.cms.gov/Library/FHIRHelpers|4.4.000"
+      "resource": "Library/FHIRHelpers|4.4.000"
     }, {
       "type": "depends-on",
       "display": "Library Status",
-      "resource": "https://madie.cms.gov/Library/Status|1.13.000"
+      "resource": "Library/Status|1.13.000"
     }, {
       "type": "depends-on",
       "display": "Library QICoreCommon",
-      "resource": "https://madie.cms.gov/Library/QICoreCommon|4.0.000"
+      "resource": "Library/QICoreCommon|4.0.000"
     }, {
       "type": "depends-on",
       "display": "Library CMD",
-      "resource": "https://madie.cms.gov/Library/CumulativeMedicationDuration|6.0.001"
+      "resource": "Library/CumulativeMedicationDuration|6.0.001"
     }, {
       "type": "depends-on",
       "display": "Library Hospice",
-      "resource": "https://madie.cms.gov/Library/Hospice|6.15.001"
+      "resource": "Library/Hospice|6.15.001"
     }, {
       "type": "depends-on",
       "display": "Code system SNOMEDCT",
@@ -1333,7 +1333,7 @@
   "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation InterventionFHIR",
   "status": "active",
   "experimental": true,
-  "date": "2025-07-22T21:42:30+00:00",
+  "date": "2025-08-04T20:33:52+00:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {

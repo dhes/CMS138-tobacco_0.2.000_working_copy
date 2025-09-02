@@ -1,0 +1,124 @@
+{
+    "_id": "c3481bcc-0a24-46eb-9959-58a84900bc2b",
+    "colName": "$cql tests on localhost",
+    "created": "2025-07-26T22:19:11.277Z",
+    "sortNum": 50000,
+    "folders": [],
+    "requests": [
+        {
+            "_id": "25a6557f-081d-41de-9ed4-47ff12c34ead",
+            "colId": "c3481bcc-0a24-46eb-9959-58a84900bc2b",
+            "containerId": "",
+            "name": "1+2",
+            "url": "",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2025-07-26T22:20:15.236Z",
+            "modified": "2025-07-26T22:20:44.417Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [\n    {\n      \"name\": \"expression\",\n      \"valueString\": \"1 + 2\"\n    }\n  ]\n}\n",
+                "form": []
+            }
+        },
+        {
+            "_id": "fa8a30da-7c30-4ecd-9321-7dad5ca9d06f",
+            "colId": "c3481bcc-0a24-46eb-9959-58a84900bc2b",
+            "containerId": "",
+            "name": "library Welcome",
+            "url": "",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2025-07-26T22:21:28.561Z",
+            "modified": "2025-07-26T22:21:48.682Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"resourceType\": \"Parameters\",\n    \"parameter\": [\n      {\n        \"name\": \"expression\",\n        \"valueString\": \"x\"\n      },\n      {\n        \"name\": \"content\",\n        \"valueString\": \"library Welcome version '1.0.0'\\ndefine \\\"x\\\": 1 + 2\"\n      }\n    ]\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "7b96d2aa-0675-45c9-9f82-d03751663471",
+            "colId": "c3481bcc-0a24-46eb-9959-58a84900bc2b",
+            "containerId": "",
+            "name": "library Hello",
+            "url": "",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2025-07-26T22:22:20.483Z",
+            "modified": "2025-07-26T22:24:07.020Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "  {\n    \"resourceType\": \"Parameters\",\n    \"parameter\": [\n      {\n        \"name\": \"expression\",\n        \"valueString\": \"greeting\"\n      },\n      {\n        \"name\": \"content\",\n        \"valueString\": \"library Hello version '1.0.0'\\ndefine \\\"greeting\\\": 'Hello, CQL!'\"\n      }\n    ]\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "6e224a52-9800-4076-9c4d-8f6171f0cec2",
+            "colId": "c3481bcc-0a24-46eb-9959-58a84900bc2b",
+            "containerId": "",
+            "name": "library Test x and y",
+            "url": "",
+            "method": "POST",
+            "sortNum": 25000,
+            "created": "2025-07-26T22:23:33.850Z",
+            "modified": "2025-07-26T22:23:33.850Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"resourceType\": \"Parameters\",\n    \"parameter\": [\n      {\n        \"name\": \"expression\",\n        \"valueString\": \"y\"\n      },\n      {\n        \"name\": \"content\",\n        \"valueString\": \"library Test version '1.0.0'\\ndefine \\\"x\\\": 5 * 2\\ndefine \\\"y\\\": \\\"x\\\" + 3\"\n      }\n    ]\n  }",
+                "form": []
+            }
+        },
+        {
+            "_id": "f0dca8e3-cc90-442b-9307-d418cf93ddb2",
+            "colId": "c3481bcc-0a24-46eb-9959-58a84900bc2b",
+            "containerId": "",
+            "name": "Smile CDR date interval example",
+            "url": "?expression=Interval[Today() - 2 years, Today())",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2025-07-26T23:43:36.796Z",
+            "modified": "2025-07-28T02:10:05.493Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "expression",
+                    "value": "Interval[Today() - 2 years, Today())",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "1134bd89-522d-4a66-ab5d-e27255869b5f",
+            "colId": "c3481bcc-0a24-46eb-9959-58a84900bc2b",
+            "containerId": "",
+            "name": "CQL Runner sample output",
+            "url": "",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2025-07-27T02:25:53.604Z",
+            "modified": "2025-07-29T22:56:03.647Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"resourceType\": \"Parameters\",\n  \"parameter\": [\n    {\n      \"name\": \"content\",\n      \"valueString\": \"library Welcome version '1.0.0'\\n\\n// Welcome to the CQL Runner!\\n// Project Github: https://github.com/DBCG/cql_runner\\n// Navigate to the config tab above to configure the evaluation options\\n// Happy coding!\\n\\ndefine \\\"Simple Multiply\\\": 5*5\\n\\ndefine \\\"Simple Message\\\": 'Hello World!'\"\n    }\n  ]\n}",
+                "form": []
+            }
+        }
+    ],
+    "settings": {
+        "headers": [
+            {
+                "name": "Content-Type",
+                "value": "application/fhir+json"
+            }
+        ],
+        "options": {
+            "baseUrl": "http://localhost:8080/fhir/$cql"
+        }
+    }
+}
