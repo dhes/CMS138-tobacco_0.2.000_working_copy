@@ -6,7 +6,7 @@ include Status version '1.13.000' called Status
 include FHIRHelpers version '4.4.000' called FHIRHelpers
 include SupplementalDataElements version '5.1.000' called SDE
 include QICoreCommon version '4.0.000' called QICoreCommon
-include Hospice version '6.15.001' called Hospice
+include Hospice version '6.15.002' called Hospice
 include CumulativeMedicationDuration version '6.0.001' called CMD
 
 codesystem "CPT": 'http://www.ama-assn.org/go/cpt'
