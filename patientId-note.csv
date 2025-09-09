@@ -12,7 +12,7 @@
 "0230f0f5-4d54-4cf0-b33e-606a02061b31","DEN1EXFail-HospiceBeforeMP"
 "83eadcba-f90b-48d9-ad77-7a1832afae78","NUM2Pass-RecievedTobaccoCessationDuringMP"
 "9fcf1018-bacd-44e3-af16-8d715af253a2","NUM3Fail-MedicatioRequestIncorrectCodeDisplay"
-"007fe881-a18d-418f-8ddf-0ee94fc9a10a","DENEXFail-HospiceEncEndsB4MP"
+"007fe881-a18d-418f-8ddf-0ee94fc9a10a","DENEXFail-HospiceEncEndsB4MP" (this contradicts the MeasureReport DH)
 "9dd6e1c5-59f4-4576-82c3-289904e3284f","NUM1Pass-SeenForTwoVisitsTobaccoNonUser"
 "f8243613-c002-4c8a-a778-78e1b4f02ae6","IPFail-Age12SeenForTwoPreventativeVisitsAfterMP"
 "1a070602-c572-4581-b438-989aaa417e64","Age12SeenFor2VScreenedForTDuringMP"

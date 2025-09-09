@@ -49,6 +49,9 @@ parameter "Measurement Period" Interval<DateTime>  // default Interval [@2026-01
 
 context Patient
 
+define "Real Time Mode":
+  Coalesce(year from start of "Measurement Period" = 1900, false)
+
 define MeasurementPeriod: "Measurement Period"
 
 define OldEnough: AgeInYears() >=12
@@ -74,15 +77,18 @@ define Denominator2:
     and "Most Recent Tobacco Use Screening Indicates Tobacco User" is not null
 
 define "Denominator 3":
-  InitialPopulation
+  "Initial Population"
 
 define Denominator3:
   InitialPopulation
 
 define "Initial Population":
-  AgeInYearsAt(date from start of "Measurement Period") >= 12
-    and ( Count("Qualifying Visit During Measurement Period") >= 2
-        or exists "Preventive Visit During Measurement Period"
+  if "Real Time Mode" then
+    AgeInYears() >= 12
+  else
+    AgeInYearsAt(date from start of "Measurement Period") >= 12
+      and ( Count("Qualifying Visit During Measurement Period") >= 2
+      or exists "Preventive Visit During Measurement Period"
     )
 
 define InitialPopulation:
