@@ -1,0 +1,64 @@
+{
+  "resourceType": "Parameters",
+  "meta": {
+    "profile": [
+      "http://your-org.com/fhir/StructureDefinition/expected-patient-scores"
+    ]
+  },
+  "parameter": [
+    {
+      "name": "evaluation-mode",
+      "valueString": "traditional"
+    },
+    {
+      "name": "subject",
+      "valueReference": {
+        "reference": "Patient/ce786347-3bab-4852-a1a8-c70aaa4771e3"
+      }
+    },
+    {
+      "name": "Initial Population",
+      "valueInteger": 0
+    },
+    {
+      "name": "Denominator1 ",
+      "valueInteger": 0
+    },
+    {
+      "name": "Denominator 2",
+      "valueInteger": 0
+    },
+    {
+      "name": "Denominator 3",
+      "valueInteger": 0
+    },
+    {
+      "name": "Denominator Exclusion",
+      "valueInteger": 0
+    },
+    {
+      "name": "Numerator 1",
+      "valueInteger": 0
+    },
+    {
+      "name": "Numerator 2",
+      "valueInteger":0
+    },
+    {
+      "name": "Numerator 3",
+      "valueInteger": 0
+    },
+    {
+      "name": "Patient Score 1",
+      "valueInteger": null
+    },
+    {
+      "name": "Patient Score 2",
+      "valueInteger": null
+    },
+    {
+      "name": "Patient Score 3",
+      "valueInteger": null
+    }
+  ]
+}

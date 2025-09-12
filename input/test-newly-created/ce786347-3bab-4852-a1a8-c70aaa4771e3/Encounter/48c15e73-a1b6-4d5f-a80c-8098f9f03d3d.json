@@ -1,0 +1,33 @@
+{
+  "resourceType": "Encounter",
+  "id": "48c15e73-a1b6-4d5f-a80c-8098f9f03d3d",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "96156",
+          "display": "Health behavior assessment, or re-assessment (ie, health-focused clinical interview, behavioral observations, clinical decision making)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/ce786347-3bab-4852-a1a8-c70aaa4771e3"
+  },
+  "period": {
+    "start": "2025-01-01T01:00:00.000Z",
+    "end": "2025-01-01T01:15:00.000Z"
+  }
+}

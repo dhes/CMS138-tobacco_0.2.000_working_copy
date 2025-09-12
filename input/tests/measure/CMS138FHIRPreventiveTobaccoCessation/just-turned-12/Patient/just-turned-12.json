@@ -1,0 +1,68 @@
+{
+  "resourceType": "Patient",
+  "id": "just-turned-12",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">Patient who turns 12 during 2025, who has a hospital stay that straddles 2024-2025 with discharge to hospice facility. MP=2025.</div>"
+  },
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-patient"
+    ]
+  },
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-race",
+      "extension": [
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2028-9",
+            "display": "Asian"
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "Asian"
+        }
+      ]
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "extension": [
+        {
+          "url": "ombCategory",
+          "valueCoding": {
+            "system": "urn:oid:2.16.840.1.113883.6.238",
+            "code": "2135-2",
+            "display": "Hispanic or Latino"
+          }
+        },
+        {
+          "url": "text",
+          "valueString": "Hispanic or Latino"
+        }
+      ]
+    }
+  ],
+  "identifier": [
+    {
+      "system": "http://hospital.smarthealthit.org",
+      "value": "999999995"
+    }
+  ],
+  "name": [
+    {
+      "family": "Hollywood",
+      "given": ["Franky"]
+    }
+  ],
+  "gender": "male",
+  "birthDate": "2013-09-08",
+  "note": [
+    {
+      "text": "DENEXPass-HospiceDischargeDuringMP"
+    }
+  ]
+}
