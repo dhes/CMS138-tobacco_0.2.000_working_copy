@@ -1,0 +1,44 @@
+{
+  "resourceType": "Encounter",
+  "id": "01759a93-6136-40fd-97e7-61126a6ca181",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "32485007",
+          "display": "Hospital admission (procedure)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/99ac4b7d-89f1-4ae3-aad8-14240c007889"
+  },
+  "period": {
+    "start": "2024-12-31T23:59:59.000Z",
+    "end": "2025-01-01T01:00:00.000Z"
+  },
+  "hospitalization": {
+    "dischargeDisposition": {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "428371000124100",
+          "display": "Discharge to healthcare facility for hospice care (procedure)"
+        }
+      ]
+    }
+  }
+}

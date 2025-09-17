@@ -1,0 +1,28 @@
+{
+  "resourceType": "MedicationRequest",
+  "id": "1dd3fca5-67ae-4e78-adc7-d3ffdf0fcf95",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-medicationrequest"
+    ]
+  },
+  "status": "active",
+  "intent": "order",
+  "medicationCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+        "code": "15",
+        "display": "topiramate 50 MG Oral Tablet",
+        "userSelected": true
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/7660a26d-ae80-44c8-89a7-cdaeaf07c20c"
+  },
+  "authoredOn": "2025-01-01T01:00:00.000Z",
+  "requester": {
+    "reference": "Practitioner/example"
+  }
+}

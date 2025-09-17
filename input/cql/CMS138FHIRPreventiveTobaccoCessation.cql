@@ -45,7 +45,7 @@ code "Postoperative follow-up visit, normally included in the surgical package, 
 code "Tobacco abuse counseling": 'Z71.6' from "ICD10CM" display 'Tobacco abuse counseling'
 code "Unlisted preventive medicine service": '99429' from "CPT" display 'Unlisted preventive medicine service'
 
-parameter "Measurement Period" Interval<DateTime>
+parameter "Measurement Period" Interval<DateTime> // default Interval[@2025-01-01T00:00:00Z,@2025-12-31T23:59:59Z]
 
 context Patient
 
@@ -119,20 +119,32 @@ define "Most Recent Tobacco Use Screening Indicates Tobacco User":
 
 define "Tobacco Cessation Counseling Given":
   ( ( ( [Procedure: "Tobacco Use Cessation Counseling"] ).isInterventionPerformed ( ) ) TobaccoCessationCounseling
-      where TobaccoCessationCounseling.performed.toInterval ( ) during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
+      where if "Real Time Mode" then
+        true 
+      else
+        TobaccoCessationCounseling.performed.toInterval ( ) during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
   )
     union ( ( [ConditionProblemsHealthConcerns: "Tobacco abuse counseling"] P )
         union ( [ConditionEncounterDiagnosis: "Tobacco abuse counseling"] E ) TobaccoCounseling
-          where TobaccoCounseling.prevalenceInterval ( ) starts during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
+          where if "Real Time Mode" then
+        true 
+      else
+        TobaccoCounseling.prevalenceInterval ( ) starts during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
     )
 
 define "Tobacco Cessation Pharmacotherapy Ordered":
   ( ( [MedicationRequest: "Tobacco Use Cessation Pharmacotherapy"] ).isMedicationOrder ( ) ) CessationPharmacotherapyOrdered
-    where CessationPharmacotherapyOrdered.authoredOn during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
+    where if "Real Time Mode" then
+        true 
+      else 
+        CessationPharmacotherapyOrdered.authoredOn during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
 
 define "Active Pharmacotherapy for Tobacco Cessation":
   ( ( [MedicationRequest: "Tobacco Use Cessation Pharmacotherapy"] ).isMedicationActive ( ) ) TakingCessationPharmacotherapy
-    where TakingCessationPharmacotherapy.medicationRequestPeriod ( ) during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
+    where if "Real Time Mode" then
+        true 
+      else
+        TakingCessationPharmacotherapy.medicationRequestPeriod ( ) during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
 
 define "Preventive Visit During Measurement Period":
   ( ( [Encounter: "Annual Wellness Visit"]

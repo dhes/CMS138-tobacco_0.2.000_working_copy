@@ -1,0 +1,33 @@
+{
+  "resourceType": "Encounter",
+  "id": "b01d69fa-9210-4092-befb-1585ebec19fc",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "185460008",
+          "display": "Home visit request by patient (procedure)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/f7b53f4a-b815-4d18-9913-6184708a5b38"
+  },
+  "period": {
+    "start": "2025-01-01T01:00:00.000Z",
+    "end": "2025-01-01T01:15:00.000Z"
+  }
+}

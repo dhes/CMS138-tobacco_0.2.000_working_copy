@@ -1,0 +1,33 @@
+{
+  "resourceType": "Encounter",
+  "id": "af560efe-c383-46f1-846f-9eb26df89973",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "11816003",
+          "display": "Diet education (procedure)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/794b8913-05f1-4eab-84e3-15e92f98828c"
+  },
+  "period": {
+    "start": "2025-01-01T01:00:00.000Z",
+    "end": "2025-01-01T01:15:00.000Z"
+  }
+}

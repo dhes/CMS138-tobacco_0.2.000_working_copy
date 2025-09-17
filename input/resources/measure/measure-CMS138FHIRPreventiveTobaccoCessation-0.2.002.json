@@ -247,7 +247,7 @@
         "valueString": "Tobacco Cessation Counseling Given"
       }, {
         "url": "statement",
-        "valueString": "define \"Tobacco Cessation Counseling Given\":\n  ( ( ( [Procedure: \"Tobacco Use Cessation Counseling\"] ).isInterventionPerformed ( ) ) TobaccoCessationCounseling\n      where TobaccoCessationCounseling.performed.toInterval ( ) during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]\n  )\n    union ( ( [ConditionProblemsHealthConcerns: \"Tobacco abuse counseling\"] P )\n        union ( [ConditionEncounterDiagnosis: \"Tobacco abuse counseling\"] E ) TobaccoCounseling\n          where TobaccoCounseling.prevalenceInterval ( ) starts during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]\n    )"
+        "valueString": "define \"Tobacco Cessation Counseling Given\":\n  ( ( ( [Procedure: \"Tobacco Use Cessation Counseling\"] ).isInterventionPerformed ( ) ) TobaccoCessationCounseling\n      where if \"Real Time Mode\" then\n        true \n      else\n        TobaccoCessationCounseling.performed.toInterval ( ) during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]\n  )\n    union ( ( [ConditionProblemsHealthConcerns: \"Tobacco abuse counseling\"] P )\n        union ( [ConditionEncounterDiagnosis: \"Tobacco abuse counseling\"] E ) TobaccoCounseling\n          where if \"Real Time Mode\" then\n        true \n      else\n        TobaccoCounseling.prevalenceInterval ( ) starts during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]\n    )"
       }, {
         "url": "displaySequence",
         "valueInteger": 9
@@ -262,7 +262,7 @@
         "valueString": "Tobacco Cessation Pharmacotherapy Ordered"
       }, {
         "url": "statement",
-        "valueString": "define \"Tobacco Cessation Pharmacotherapy Ordered\":\n  ( ( [MedicationRequest: \"Tobacco Use Cessation Pharmacotherapy\"] ).isMedicationOrder ( ) ) CessationPharmacotherapyOrdered\n    where CessationPharmacotherapyOrdered.authoredOn during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]"
+        "valueString": "define \"Tobacco Cessation Pharmacotherapy Ordered\":\n  ( ( [MedicationRequest: \"Tobacco Use Cessation Pharmacotherapy\"] ).isMedicationOrder ( ) ) CessationPharmacotherapyOrdered\n    where if \"Real Time Mode\" then\n        true \n      else \n        CessationPharmacotherapyOrdered.authoredOn during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]"
       }, {
         "url": "displaySequence",
         "valueInteger": 10
@@ -277,7 +277,7 @@
         "valueString": "Active Pharmacotherapy for Tobacco Cessation"
       }, {
         "url": "statement",
-        "valueString": "define \"Active Pharmacotherapy for Tobacco Cessation\":\n  ( ( [MedicationRequest: \"Tobacco Use Cessation Pharmacotherapy\"] ).isMedicationActive ( ) ) TakingCessationPharmacotherapy\n    where TakingCessationPharmacotherapy.medicationRequestPeriod ( ) during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]"
+        "valueString": "define \"Active Pharmacotherapy for Tobacco Cessation\":\n  ( ( [MedicationRequest: \"Tobacco Use Cessation Pharmacotherapy\"] ).isMedicationActive ( ) ) TakingCessationPharmacotherapy\n    where if \"Real Time Mode\" then\n        true \n      else\n        TakingCessationPharmacotherapy.medicationRequestPeriod ( ) during day of Interval[start of \"Measurement Period\" - 6 months, end of \"Measurement Period\"]"
       }, {
         "url": "displaySequence",
         "valueInteger": 11
@@ -1473,7 +1473,7 @@
   "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation InterventionFHIR",
   "status": "active",
   "experimental": true,
-  "date": "2025-09-11T23:09:43+00:00",
+  "date": "2025-09-14T01:32:25+00:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {

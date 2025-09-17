@@ -1,0 +1,33 @@
+{
+  "resourceType": "Encounter",
+  "id": "25d67cae-ddcb-4461-b70c-e20f54866bd2",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "41375007",
+          "display": "Medical evaluation of hearing problem (procedure)"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/a023252b-79c8-44ad-a545-3cfddcc706b3"
+  },
+  "period": {
+    "start": "2025-01-01T01:00:00.000Z",
+    "end": "2025-01-01T01:15:00.000Z"
+  }
+}

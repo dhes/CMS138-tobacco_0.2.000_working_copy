@@ -1,0 +1,33 @@
+{
+  "resourceType": "Encounter",
+  "id": "6da7b731-8e3d-49dc-afd4-446fcf47b5d0",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/us/qicore/StructureDefinition/qicore-encounter"
+    ]
+  },
+  "status": "finished",
+  "class": {
+    "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+    "code": "AMB",
+    "display": "ambulatory"
+  },
+  "type": [
+    {
+      "coding": [
+        {
+          "system": "http://www.ama-assn.org/go/cpt",
+          "code": "99429",
+          "display": "Unlisted preventive medicine service"
+        }
+      ]
+    }
+  ],
+  "subject": {
+    "reference": "Patient/15e3104f-d627-43b1-8c37-4b71545ec3d0"
+  },
+  "period": {
+    "start": "2025-01-01T01:00:00.000Z",
+    "end": "2025-01-01T01:15:00.000Z"
+  }
+}

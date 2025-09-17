@@ -1,0 +1,17 @@
+{
+  "resourceType": "Group",
+  "id": "CMS138PlanDefinition",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/artifact-testArtifact",
+    "valueCanonical": "http://ecqi.healthit.gov/ecqms/Measure/CMS138PlanDefinition"
+  } ],
+  "active": true,
+  "type": "person",
+  "actual": true,
+  "member": [ {
+    "entity": {
+      "reference": "Patient/0d221636-5f14-4074-9337-eb4b0868fb3e",
+      "display": "Betty Bertha"
+    }
+  } ]
+}

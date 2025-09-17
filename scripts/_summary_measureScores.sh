@@ -1,0 +1,1 @@
+find input/tests/measure/CMS138FHIRPreventiveTobaccoCessation -name "*.json" -path "*/MeasureReport/*" -exec jq -r '.group[] | .id + ": " + (.measureScore.value | tostring)' {} \;
