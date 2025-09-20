@@ -227,6 +227,10 @@ define "Patient Score 1":
     else 0
   end
 
+// Experimental
+define "Patient Score 1 is 0":
+  if "Patient Score 1" = 0 then 'Assess current tobacco status' else null
+
 // Tobacco User Who Had an Intervention
 define "Patient Score 2":
   case
@@ -234,6 +238,10 @@ define "Patient Score 2":
     when Coalesce("Numerator 2", false) then 1
     else 0
   end
+
+// Experimental
+define "Patient Score 2 is 0":
+  if "Patient Score 2" = 0 then 'Provide tobacco cessation counseling or pharmacotherapy' else null
 
 // Everything Done Right
 define "Patient Score 3":
