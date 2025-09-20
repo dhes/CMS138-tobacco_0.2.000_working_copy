@@ -69,6 +69,17 @@ define "Initial Population":
       or exists "Preventive Visit During Measurement Period"
     )
 
+// Experimental
+  define "eCQM Initial Population Exclusion Reason":
+    if "Real Time Mode" then
+      null
+    else if AgeInYearsAt(date from start of "Measurement Period") < 12 then
+      'Will not appear in quality measure score: Under 12 years old at measurement period start'
+    else if Count("Qualifying Visit During Measurement Period") < 2 and not exists "Preventive Visit During Measurement Period" then
+      'Will not appear in quality measure score: Insufficient visits (need 2+ general visits OR 1+ preventive visit)'
+    else
+      null  // Patient IS in Initial Population
+
 define "Denominator 1":
   "Initial Population"
 
@@ -208,6 +219,7 @@ define "SDE Race":
 define "SDE Sex":
   SDE."SDE Sex"
 
+// Screened for Tobacco Use
 define "Patient Score 1":
   case
     when not (Coalesce("Denominator 1", false) and not Coalesce("Denominator Exclusion", false) ) then null
@@ -215,6 +227,7 @@ define "Patient Score 1":
     else 0
   end
 
+// Tobacco User Who Had an Intervention
 define "Patient Score 2":
   case
     when not (Coalesce("Denominator 2", false) and not Coalesce("Denominator Exclusion", false) ) then null
@@ -222,6 +235,7 @@ define "Patient Score 2":
     else 0
   end
 
+// Everything Done Right
 define "Patient Score 3":
   case
     when not (Coalesce("Denominator 3", false) and not Coalesce("Denominator Exclusion", false) ) then null

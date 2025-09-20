@@ -592,7 +592,7 @@
         "valueString": "Denominator 1"
       }, {
         "url": "statement",
-        "valueString": "define \"Denominator 1\":\n  \"Initial Population\""
+        "valueString": "// Patient IS in Initial Population\n\ndefine \"Denominator 1\":\n  \"Initial Population\""
       }, {
         "url": "displaySequence",
         "valueInteger": 32
@@ -1413,11 +1413,6 @@
     "valueReference": {
       "reference": "#effective-data-requirements"
     }
-  }, {
-    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
-    "valueReference": {
-      "reference": "Device/cqf-tooling"
-    }
   } ],
   "url": "https://madie.cms.gov/Measure/CMS138FHIRPreventiveTobaccoCessation",
   "identifier": [ {
@@ -1473,7 +1468,7 @@
   "title": "Preventive Care and Screening: Tobacco Use: Screening and Cessation InterventionFHIR",
   "status": "active",
   "experimental": true,
-  "date": "2025-09-14T01:32:25+00:00",
+  "date": "2025-09-20T21:14:08+00:00",
   "publisher": "National Committee for Quality Assurance",
   "contact": [ {
     "telecom": [ {

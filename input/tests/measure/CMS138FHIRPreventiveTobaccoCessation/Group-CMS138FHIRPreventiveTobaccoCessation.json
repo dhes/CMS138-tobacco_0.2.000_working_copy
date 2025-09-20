@@ -1,0 +1,237 @@
+{
+  "resourceType": "Group",
+  "id": "CMS138FHIRPreventiveTobaccoCessation",
+  "extension": [ {
+    "url": "http://hl7.org/fhir/StructureDefinition/artifact-testArtifact",
+    "valueCanonical": "http://ecqi.healthit.gov/ecqms/Measure/CMS138FHIRPreventiveTobaccoCessation"
+  } ],
+  "active": true,
+  "type": "person",
+  "actual": true,
+  "member": [ {
+    "entity": {
+      "reference": "Patient/7c1ec3eb-7e2a-4419-900d-a6c74df745f1",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/7660a26d-ae80-44c8-89a7-cdaeaf07c20c",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/90bf6886-cc84-4f25-ab8e-d31b97475e05",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/c150565c-0acc-44c7-addf-c93f4bf6f58a",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/0bac99d3-5dc8-4afa-b92c-08175e6d4128",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/6735075f-b4b8-41a9-8c3d-9f63737a4458",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/a023252b-79c8-44ad-a545-3cfddcc706b3",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/a09e055c-3f90-47d7-892f-9b634a426615",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/188daa2f-3632-41a0-92a0-49dedb4cff61",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/794b8913-05f1-4eab-84e3-15e92f98828c",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/f5f20099-9d01-41c8-8834-314387b530ad",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/53125065-f747-4c9b-8f4e-3cb1a0fb75fa",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/1fd5d757-33e9-4571-bb7c-d811f337147e",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/f7b53f4a-b815-4d18-9913-6184708a5b38",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/00145130-fc30-4158-a074-de6eac9f16c5",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/1546d7b8-b059-434b-b44e-438d8b19afdb",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/cb2f20d7-a254-4e19-b5c7-ac15493ecde5",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/b1e9de34-9ac3-4e54-8c0e-d2c4821addf0",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/83ec954c-2bfe-4254-bcc1-a7346def56c7",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/3b852a23-cad5-44f0-a378-a67fbd615d39",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/cb88eb8c-295d-4bf5-8570-f70fc3c38005",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/636ee146-710d-48c2-8f0f-f5eaee27ac05",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/fa04c830-05fb-4363-af3b-2cde3cd8d26f",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/3db6bc73-54a7-4bcd-8547-41476890110a",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/1e9d0316-15ee-45c6-8cf4-b1fe4dd38ee4",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/d1ca0629-e132-40fb-ac61-b6db8ab687e0",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/6996128b-dbd1-424a-80a4-d555e02d27df",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/48a82409-6045-44df-992b-a64e0d16e16e",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/844ddd97-056a-4069-9dc4-ae7588dd2b4c",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/99ac4b7d-89f1-4ae3-aad8-14240c007889",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/84be94ef-4702-4657-b9df-6b9c3aeb48ed",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/10256be8-445b-418d-804e-97d88ec93534",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/55118a25-0e94-4cbb-bc80-0adba6fc0da0",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/3d7f4315-9b6d-4524-aeac-611a0faa50c1",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/27283efb-a937-4938-a6c4-42468bdeb7fd",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/da50ea7c-7bc0-420e-b34f-24194ada6d23",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/15e3104f-d627-43b1-8c37-4b71545ec3d0",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/2c67319a-21bb-46a9-8eb5-032c55ef22a6",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/c3cf00f5-78d9-4e58-922b-4dad4d05177a",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/2f6433a6-e4bc-4325-854a-0b405c2b3bcb",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/d441f96b-536c-415f-bde2-0155443e7260",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/883d6001-49b2-4749-a66e-46883092a36e",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/b7101730-305b-4dc8-be71-7abcc8afc0d7",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/ce4e603a-8043-4427-9823-2837adbe27af",
+      "display": "Frankie Hollywood"
+    }
+  }, {
+    "entity": {
+      "reference": "Patient/0a82b597-2959-4b36-b922-a7025a6110eb",
+      "display": "Frankie Hollywood"
+    }
+  } ]
+}
