@@ -45,7 +45,7 @@ code "Postoperative follow-up visit, normally included in the surgical package, 
 code "Tobacco abuse counseling": 'Z71.6' from "ICD10CM" display 'Tobacco abuse counseling'
 code "Unlisted preventive medicine service": '99429' from "CPT" display 'Unlisted preventive medicine service'
 
-parameter "Measurement Period" Interval<DateTime> // default Interval[@2025-01-01T00:00:00Z,@2025-12-31T23:59:59Z]
+parameter "Measurement Period" Interval<DateTime> default Interval[@1900-01-01T00:00:00Z,@1900-12-31T23:59:59Z]
 
 context Patient
 
@@ -77,8 +77,10 @@ define "Initial Population":
       'Will not appear in quality measure score: Under 12 years old at measurement period start'
     else if Count("Qualifying Visit During Measurement Period") < 2 and not exists "Preventive Visit During Measurement Period" then
       'Will not appear in quality measure score: Insufficient visits (need 2+ general visits OR 1+ preventive visit)'
+    else if Hospice."Has Hospice Services" then
+      'Will not appear in quality measure score: Has Hospice Services'
     else
-      null  // Patient IS in Initial Population
+      null  // Patient IS included in measure score
 
 define "Denominator 1":
   "Initial Population"
@@ -146,14 +148,16 @@ define "Tobacco Cessation Counseling Given":
 define "Tobacco Cessation Pharmacotherapy Ordered":
   ( ( [MedicationRequest: "Tobacco Use Cessation Pharmacotherapy"] ).isMedicationOrder ( ) ) CessationPharmacotherapyOrdered
     where if "Real Time Mode" then
-        true 
+        CessationPharmacotherapyOrdered.authoredOn during day of Interval[DateTime(year from Today(), 1, 1, 0, 0, 0, 0, 0) - 6 months, DateTime(year from
+  Today(), 12, 31, 23, 59, 59, 999, 0)]
       else 
         CessationPharmacotherapyOrdered.authoredOn during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
 
 define "Active Pharmacotherapy for Tobacco Cessation":
   ( ( [MedicationRequest: "Tobacco Use Cessation Pharmacotherapy"] ).isMedicationActive ( ) ) TakingCessationPharmacotherapy
     where if "Real Time Mode" then
-        true 
+        TakingCessationPharmacotherapy.authoredOn during day of Interval[DateTime(year from Today(), 1, 1, 0, 0, 0, 0, 0) - 6 months, DateTime(year from
+  Today(), 12, 31, 23, 59, 59, 999, 0)] 
       else
         TakingCessationPharmacotherapy.medicationRequestPeriod ( ) during day of Interval[start of "Measurement Period" - 6 months, end of "Measurement Period"]
 
@@ -177,7 +181,11 @@ define "Preventive Visit During Measurement Period":
       )
       union [Encounter: "Nutrition Services"]
   ).isEncounterPerformed ( ) ) PreventiveEncounter
-    where PreventiveEncounter.period.toInterval ( ) during day of "Measurement Period"
+    where if "Real Time Mode" then
+        PreventiveEncounter.period.toInterval ( ) during day of Interval[DateTime(year from Today(), 1, 1, 0, 0, 0, 0, 0), DateTime(year from Today(), 12, 31,
+  23, 59, 59, 999, 0)] 
+      else
+    PreventiveEncounter.period.toInterval ( ) during day of "Measurement Period"
 
 define "Qualifying Visit During Measurement Period":
   ( ( ( [Encounter] E
@@ -202,7 +210,11 @@ define "Qualifying Visit During Measurement Period":
       union [Encounter: "Telephone Visits"]
       union [Encounter: "Virtual Encounter"]
   ).isEncounterPerformed ( ) ) OfficeBasedEncounter
-    where OfficeBasedEncounter.period.toInterval ( ) during day of "Measurement Period"
+        where if "Real Time Mode" then
+        OfficeBasedEncounter.period.toInterval ( ) during day of Interval[DateTime(year from Today(), 1, 1, 0, 0, 0, 0, 0), DateTime(year from Today(), 12, 31,
+  23, 59, 59, 999, 0)] 
+      else
+    OfficeBasedEncounter.period.toInterval ( ) during day of "Measurement Period"
 
 define "Denominator Exclusion":
   Hospice."Has Hospice Services"
@@ -229,7 +241,7 @@ define "Patient Score 1":
 
 // Experimental
 define "Patient Score 1 is 0":
-  if "Patient Score 1" = 0 then 'Assess current tobacco status' else null
+  if "Patient Score 1" = 0 then 'Assess current tobacco status' else false
 
 // Tobacco User Who Had an Intervention
 define "Patient Score 2":
@@ -241,7 +253,7 @@ define "Patient Score 2":
 
 // Experimental
 define "Patient Score 2 is 0":
-  if "Patient Score 2" = 0 then 'Provide tobacco cessation counseling or pharmacotherapy' else null
+  if "Patient Score 2" = 0 then 'Provide tobacco cessation counseling or pharmacotherapy' else false
 
 // Everything Done Right
 define "Patient Score 3":

@@ -56,6 +56,11 @@
     "valueReference": {
       "reference": "#options"
     }
+  }, {
+    "url": "http://hl7.org/fhir/uv/crmi/StructureDefinition/crmi-softwaresystem",
+    "valueReference": {
+      "reference": "Device/cqf-tooling"
+    }
   } ],
   "url": "https://madie.cms.gov/Library/CumulativeMedicationDuration",
   "version": "6.0.001",
